@@ -168,7 +168,7 @@ void menuCategoria(int categoria)
             // Exibe os produtos e preços da categoria de Padaria
       printf("\n|---------------------- |---------------------------|\n");
       printf("\n|       Padaria         | Total na Categoria: R$%.2f|\n", Totalcategoria[2]);
-      printf("\n|  ID     |   Preço     |  Produto                  |\n");
+      printf("\n|  ID     |   Preco     |  Produto                  |\n");
             for (int i = 0; i < 7; i++)
             {
             if (strcmp(produtos[categoria - 1][i], "Pao Integral") == 0 && precos[categoria - 1][i] == 0)
