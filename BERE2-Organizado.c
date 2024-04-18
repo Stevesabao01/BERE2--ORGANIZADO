@@ -178,7 +178,7 @@ void menuCategoria(int categoria)
                 else
                 {
      printf("\n|---------------------------------------------------|\n");
-     printf("\n|     %d. |   R$%.2f   |   %s                       |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
+     printf("\n|     %d. |   R$%.2f    |   %s                      |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
                 }
             }
             break;
