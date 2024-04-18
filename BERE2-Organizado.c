@@ -122,7 +122,7 @@ void menuCategoria(int categoria)
     if (!caixaAberto)
     {
         printf("\n|----------------------------------------------|\n");
-        printf("\n|  O caixa está fechado. Não é possível operar.|\n");
+        printf("\n| O caixa está fechado. Não é possível operar. |\n");
         printf("\n|----------------------------------------------|\n");
 
         return;
@@ -136,58 +136,58 @@ void menuCategoria(int categoria)
         case 1:
             // Exibe os produtos e preços da categoria de Material de Limpeza
 
-       printf("\n|======================|===========================|\n");
-       printf("\n| Material de Limpeza  | Total na Categoria: R$%.2f|\n", Totalcategoria[0]);
-       printf("\n| ID | Preco | Produto |\n");
-            for (int i = 0; i < 7; i++)
+       printf("\n|====================== |===========================|\n");
+       printf("\n| Material de Limpeza   | Total na Categoria: R$%.2f|\n", Totalcategoria[0]);
+       printf("\n| ID      |   Preco     | Produto  |\n");
+            for (int i = 0; i < 8; i++)
             {
-                if (strcmp(produtos[categoria - 1][i], "Esponja") == 0 && precos[categoria - 1][i] == 0)
-                {
-       printf("\n|--------------------------------------------------|\n");
-       printf("\n|%d. | Produto Esgotado| %s\n", i + 1, produtos[categoria - 1][i]);
+            if (strcmp(produtos[categoria - 1][i], "Esponja") == 0 && precos[categoria - 1][i] == 0)
+               {
+       printf("\n|----------------------------------------------------|\n");
+       printf("\n| %d. | Produto Esgotado| %s\n", i + 1, produtos[categoria - 1][i]);
                 }
                 else
                 {
-       printf("\n|--------------------------------------------------|\n");
-       printf("\n|%d. |      R$%.2f     | %s                        |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
+       printf("\n|---------------------------------------------------|\n");
+       printf("\n|%d. |      R$%.2f      | %s                        |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
                 }
             }
             break;
         case 2:
             // Exibe os produtos e preços da categoria de Venda de Alimentos
-      printf("\n|--------------------------------------------------|\n");
-      printf("\n| Venda de Alimentos   | Total na Categoria: R$%.2f|\n", Totalcategoria[1]);
-      printf("\n|      ID |  Preco     |  Produto                  |\n");
-            for (int i = 0; i < 7; i++)
+      printf("\n|---------------------------------------------------|\n");
+      printf("\n| Venda de Alimentos    | Total na Categoria: R$%.2f|\n", Totalcategoria[1]);
+      printf("\n|   ID    |    Preco    |  Produto                  |\n");
+            for (int i = 0; i < 8; i++)
             {
-      printf("\n|      %d.|  R$%.2f    |  %s                       |\n", i + 1, precos[1][i], produtos[1][i]);
+      printf("\n|   %d.   |   R$%.2f    |  %s                       |\n", i + 1, precos[1][i], produtos[1][i]);
             }
             break;
         case 3:
             // Exibe os produtos e preços da categoria de Padaria
-      printf("\n|----------------------|---------------------------|\n");
-      printf("\n|       Padaria        | Total na Categoria: R$%.2f|\n", Totalcategoria[2]);
-      printf("\n|     ID |  Preço      |  Produto                  |\n");
-            for (int i = 0; i < 7; i++)
+      printf("\n|---------------------- |---------------------------|\n");
+      printf("\n|       Padaria         | Total na Categoria: R$%.2f|\n", Totalcategoria[2]);
+      printf("\n|  ID     |   Preço     |  Produto                  |\n");
+            for (int i = 0; i < 8; i++)
             {
-                if (strcmp(produtos[categoria - 1][i], "Pao Integral") == 0 && precos[categoria - 1][i] == 0)
+            if (strcmp(produtos[categoria - 1][i], "Pao Integral") == 0 && precos[categoria - 1][i] == 0)
                 {
      printf("\n|---------------------------------------------------|\n");
-     printf("\n|     %d. | Sem Estoque |  %s                       |\n", i + 1, produtos[categoria - 1][i]);
+     printf("\n|  %d.     | Sem Estoque |  %s                       |\n", i + 1, produtos[categoria - 1][i]);
                 }
                 else
                 {
      printf("\n|---------------------------------------------------|\n");
-     printf("\n|     %d. |   R$%.2f    |   %s                      |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
+     printf("\n|     %d.  |   R$%.2f    |   %s                      |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
                 }
             }
             break;
         }
      printf("\n|---------------------------------------------------|\n");
-     printf("\n| 5.  Voltar ao Menu Principal                      |\n");
+     printf("\n| 8.  Voltar ao Menu Principal                      |\n");
      printf("\n|Digite a opcao desejada:                           |\n");
         scanf("%d", &opcao); // Processa a escolha do usuário
-        if (opcao < 5)
+        if (opcao < 5)//talvez alterar 5 pelo 8
         {
             if (strcmp(produtos[categoria - 1][opcao - 1], "Esponja") == 0 && precos[categoria - 1][opcao - 1] == 0)
             {
@@ -218,7 +218,7 @@ void menuCategoria(int categoria)
             printf("Opcao invalida!\n");
         }
 
-    } while (opcao != 5); // Repete o loop até o usuário escolher voltar
+    } while (opcao != 8); // Repete o loop até o usuário escolher voltar
 }
 
 // Função para exibir o menu de pagamento
