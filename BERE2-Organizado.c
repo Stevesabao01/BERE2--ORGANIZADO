@@ -28,9 +28,9 @@ char produtos[3][7][25] = {
     {"Pao de forma", "Pao Integral", "Pao Frances (un)", "Sonho", "Biscoito", "Pao Doce (un)", "Salgado (un)"}};
 
 float precos[3][7] = {
-    {1.99, 8.99, 0, 15.00, 0, 0, 0},
-    {19.99, 5.90, 4.50, 8.00, 0, 0, 0},
-    {9.50, 0, 1.90, 8.50, 0, 0, 0}};
+    {1.99, 8.99, 0, 15.00, 4.99, 7.99, 1.00},
+    {19.99, 5.90, 4.50, 8.00, 5.00, 2.00, 5.00},
+    {9.50, 0, 1.90, 8.50, 12.50, 2.50, 17.50}};
 
 // Função principal
 int main(void)
@@ -136,31 +136,31 @@ void menuCategoria(int categoria)
         case 1:
             // Exibe os produtos e preços da categoria de Material de Limpeza
 
-       printf("\n|====================== |===========================|\n");
-       printf("\n| Material de Limpeza   | Total na Categoria: R$%.2f|\n", Totalcategoria[0]);
-       printf("\n| ID      |   Preco     | Produto  |\n");
-            for (int i = 0; i < 8; i++)
+       printf("\n|======================|===========================|\n");
+       printf("\n| Material de Limpeza  | Total na Categoria: R$%.2f|\n", Totalcategoria[0]);
+       printf("\n| ID      |   Preco    | Produto      |\n");
+            for (int i = 0; i < 7; i++)
             {
             if (strcmp(produtos[categoria - 1][i], "Esponja") == 0 && precos[categoria - 1][i] == 0)
                {
-       printf("\n|----------------------------------------------------|\n");
-       printf("\n| %d. | Produto Esgotado| %s\n", i + 1, produtos[categoria - 1][i]);
+       printf("\n|--------------------------------------------------|\n");
+       printf("\n| %d. | Produto Esgotado| %s          |\n", i + 1, produtos[categoria - 1][i]);
                 }
                 else
                 {
-       printf("\n|---------------------------------------------------|\n");
-       printf("\n|%d. |      R$%.2f      | %s                        |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
+       printf("\n|--------------------------------------------------|\n");
+       printf("\n|%d. |      R$%.2f      | %s          |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
                 }
             }
             break;
         case 2:
             // Exibe os produtos e preços da categoria de Venda de Alimentos
       printf("\n|---------------------------------------------------|\n");
-      printf("\n| Venda de Alimentos    | Total na Categoria: R$%.2f|\n", Totalcategoria[1]);
+      printf("\n| Venda de Alimentos    |Total na Categoria: R$%.2f |\n", Totalcategoria[1]);
       printf("\n|   ID    |    Preco    |  Produto                  |\n");
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
-      printf("\n|   %d.   |   R$%.2f    |  %s                       |\n", i + 1, precos[1][i], produtos[1][i]);
+      printf("\n|   %d.   |   R$%.2f    | %s                        |\n", i + 1, precos[1][i], produtos[1][i]);
             }
             break;
         case 3:
@@ -168,17 +168,17 @@ void menuCategoria(int categoria)
       printf("\n|---------------------- |---------------------------|\n");
       printf("\n|       Padaria         | Total na Categoria: R$%.2f|\n", Totalcategoria[2]);
       printf("\n|  ID     |   Preço     |  Produto                  |\n");
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
             if (strcmp(produtos[categoria - 1][i], "Pao Integral") == 0 && precos[categoria - 1][i] == 0)
                 {
      printf("\n|---------------------------------------------------|\n");
-     printf("\n|  %d.     | Sem Estoque |  %s                       |\n", i + 1, produtos[categoria - 1][i]);
+     printf("\n|  %d.     | Sem Estoque | %s                       |\n", i + 1, produtos[categoria - 1][i]);
                 }
                 else
                 {
      printf("\n|---------------------------------------------------|\n");
-     printf("\n|     %d.  |   R$%.2f    |   %s                      |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
+     printf("\n|     %d.  |   R$%.2f    | %s                       |\n", i + 1, precos[categoria - 1][i], produtos[categoria - 1][i]);
                 }
             }
             break;
